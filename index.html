@@ -9,67 +9,95 @@
     <script src="js/jquery.mousewheel-min.js"></script>
     <script src="js/jquery.terminal-min.js"></script>
     <link href="css/jquery.terminal.css" rel="stylesheet"/>
+    <style>
+        /* FULL SCREEN FIXES */
+        /*
+        .terminal {
+            font-family: 'Droid Sans Mono';
+        }
+        */
+        .terminal a.ui-slider-handle:focus { outline: none; }
+        body { margin: 0; padding: 0; }
+        /* html { background-color: #000; }*/
+        .clear { clear: both; }
+        /* This works only in Safari and Google Chrome */
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            .terminal, .terminal .terminal-output, .terminal .terminal-output div,
+            .terminal .terminal-output div div, .cmd, .terminal .cmd span, .terminal .cmd div {
+                
+            }
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
-
-        function boldify(text){
+        function boldify(text) {
             return '[[b;;]' + text + ']';
         }
 
         jQuery(function($, undefined) {
-        $('body').terminal(function(command, term) {
-            if (command == 'help') {
-                term.echo('\x1b[1;32mwhoami')
-                term.echo('\x1b[1;31mskills')
-                term.echo('\x1b[1;34mcontact')
+                term = $('#shell').terminal(function(command, term) {
+                    if (command.toUpperCase() == 'help'.toUpperCase()) {
+                        term.echo('\x1b[1;32mwhoami');
+                        term.echo('\x1b[1;31mskills');
+                        term.echo('\x1b[1;34mcontact');
 
-            }
-            else if(command == 'whoami'){
-                term.echo('')
-                term.echo(boldify('Hello there!'));
-                term.echo(boldify('My name is Dario, I am a Software Developer / Engineer / Code-Monkey. '));
-                term.echo(boldify('I am born in Italy and I like to travel all over the world.'));
-                term.echo(boldify('In the last 4 years, I studied in Italy, Spain, Germany and Australia.'));
-                term.echo(boldify('I am  currently doing my Master thesis in Sydney, in the field of Multipath Networks.'));
-                term.echo('')
-                term.echo(boldify('Feel free to contact me for every question!'));
-                term.echo('')
-            }
-            else if(command == 'skills'){
-                term.echo(boldify('Languages:'));
-                term.echo('\tPython:');
-                term.echo('\tJava');
-                term.echo('\tC#');
-                term.echo('\tJavascript');
-                term.echo('\tCSS & HTML');
-                term.echo(boldify('Platforms:'));
-                term.echo('\tLinux');
-                term.echo('\tAndroid');
-                term.echo('\t.NET');
-                term.echo(boldify('Software:'));
-                term.echo('\tDjango');
-                term.echo('\tSpring');
-                term.echo('\tMicrosoft WPF');
-                term.echo('\tBackbone.js');
-                term.echo('\tVLC codebase');
-                term.echo('\tApache & Postfix/Dovecot')
-                term.echo(boldify('Networking:'));
-                term.echo('\tTCP');
-                term.echo('\tOpenFlow');
-                term.echo('\tOpen vSwitch');
-            }
-            else if(command == 'contact'){
-                term.echo(boldify('Mail') + ': dario.banfi9@gmail.com')
-            }
-            else if(command != '') {
-                term.echo(command + ': command not found');
-            }
-        }, {
-            greetings: boldify('Welcome!')+ '\n\nThis is a cheap attempt to make an interesting personal page. \nType: "help" for a list of available commands.\n',
-            name: 'personalpage',
-            prompt: 'visitor@dariobanfi> '});
-        });
+                    } else if (command.toUpperCase() == 'whoami'.toUpperCase()) {
+                        term.echo('')
+                        term.echo(boldify('Hello there!'));
+                        term.echo(boldify('My name is Dario, I am a Software Developer / Engineer / Code-Monkey. '));
+                        term.echo(boldify('I am born in Italy and I like to travel all over the world.'));
+                        term.echo(boldify('In the last 4 years, I studied in Italy, Spain, Germany and Australia.'));
+                        term.echo(boldify('I am  currently doing my Master thesis in Sydney, in the field of Multipath Networks.'));
+                        term.echo('');
+                        term.echo(boldify('Feel free to contact me for every question!'));
+                        term.echo('');
+                    } else if (command.toUpperCase() == 'skills'.toUpperCase()) {
+                        term.echo(boldify('Languages:'));
+                        term.echo('\tPython:');
+                        term.echo('\tJava');
+                        term.echo('\tC#');
+                        term.echo('\tJavascript');
+                        term.echo('\tCSS & HTML');
+                        term.echo(boldify('Platforms:'));
+                        term.echo('\tLinux');
+                        term.echo('\tAndroid');
+                        term.echo('\t.NET');
+                        term.echo(boldify('Software:'));
+                        term.echo('\tDjango');
+                        term.echo('\tSpring');
+                        term.echo('\tMicrosoft WPF');
+                        term.echo('\tBackbone.js');
+                        term.echo('\tVLC codebase');
+                        term.echo('\tApache & Postfix/Dovecot')
+                        term.echo(boldify('Networking:'));
+                        term.echo('\tTCP');
+                        term.echo('\tOpenFlow');
+                        term.echo('\tOpen vSwitch');
+                    } else if (command.toUpperCase() == 'contact'.toUpperCase()) {
+                        term.echo(boldify('Mail') + ': dario.banfi9@gmail.com')
+                    } else if (command != '') {
+                        term.echo(command + ': command not found');
+                    }
+                }, {
+                    greetings: boldify('Welcome!') + '\n\nThis is a cheap attempt to make an interesting personal page. \nType: "help" for a list of available commands.\n',
+                    name: 'personalpage',
+                    prompt: 'visitor@dariobanfi> ',
+                    onInit: function(term) {}
+                }).css({
+                    overflow: 'auto'
+                });
+
+                $(window).resize(function() {
+                    term.css('height', $(window).height() - 20);
+                    term.resize();
+                }).resize();
+            });
+
+            
+       
     </script>
   </head>
 <body>
+    <div id="shell"></div>
 </body>
 </html>
