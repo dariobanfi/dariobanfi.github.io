@@ -1,104 +1,45 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8" />
-    <title>Dario Banfi - Software Developer</title>
-    <meta name="author" content="Dario Banfi"/>
-    <meta name="Description" content="Dario Banfi information"/>
-    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="js/jquery.mousewheel-min.js"></script>
-    <script src="js/jquery.terminal-min.js"></script>
-    <link href="css/jquery.terminal.css" rel="stylesheet"/>
-    <link rel="icon" type="image/png" href="img/favicon.ico">
-    <style>
-        /* FULL SCREEN FIXES */
-        /*
-        .terminal {
-            font-family: 'Droid Sans Mono';
-        }
-        */
-        .terminal a.ui-slider-handle:focus { outline: none; }
-        body { margin: 0; padding: 0; }
-        /* html { background-color: #000; }*/
-        .clear { clear: both; }
-        /* This works only in Safari and Google Chrome */
-        @media screen and (-webkit-min-device-pixel-ratio:0) {
-            .terminal, .terminal .terminal-output, .terminal .terminal-output div,
-            .terminal .terminal-output div div, .cmd, .terminal .cmd span, .terminal .cmd div {
-                
-            }
-        }
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-        function boldify(text) {
-            return '[[b;;]' + text + ']';
-        }
-
-        jQuery(function($, undefined) {
-                term = $('#shell').terminal(function(command, term) {
-                    if (command.toUpperCase() == 'help'.toUpperCase()) {
-                        term.echo('\x1b[1;32mwhoami');
-                        term.echo('\x1b[1;31mskills');
-                        term.echo('\x1b[1;34mcontact');
-
-                    } else if (command.toUpperCase() == 'whoami'.toUpperCase()) {
-                        term.echo('')
-                        term.echo(boldify('Hello there!'));
-                        term.echo(boldify('My name is Dario, I am a Software Developer / Engineer / Code-Monkey. '));
-                        term.echo(boldify('I was born in Italy and I like to travel all over the world.'));
-                        term.echo(boldify('In the last 4 years, I studied in Italy, Spain, Germany and Australia.'));
-                        term.echo(boldify('I am currently doing my Master thesis in Sydney, in the field of Multipath Networks.'));
-                        term.echo('');
-                        term.echo(boldify('Feel free to contact me for any question!'));
-                        term.echo('');
-                    } else if (command.toUpperCase() == 'skills'.toUpperCase()) {
-                        term.echo(boldify('Languages:'));
-                        term.echo('\tPython');
-                        term.echo('\tJava');
-                        term.echo('\tC#');
-                        term.echo('\tJavascript');
-                        term.echo('\tCSS & HTML');
-                        term.echo(boldify('Platforms:'));
-                        term.echo('\tLinux');
-                        term.echo('\tAndroid');
-                        term.echo('\t.NET');
-                        term.echo(boldify('Software:'));
-                        term.echo('\tDjango');
-                        term.echo('\tSpring');
-                        term.echo('\tMicrosoft WPF');
-                        term.echo('\tBackbone.js');
-                        term.echo('\tVLC codebase');
-                        term.echo('\tApache & Postfix/Dovecot')
-                        term.echo(boldify('Networking:'));
-                        term.echo('\tTCP');
-                        term.echo('\tOpenFlow');
-                        term.echo('\tOpen vSwitch');
-                    } else if (command.toUpperCase() == 'contact'.toUpperCase()) {
-                        term.echo(boldify('Mail') + ': dario.banfi9@gmail.com')
-                    } else if (command != '') {
-                        term.echo(command + ': command not found');
-                    }
-                }, {
-                    greetings: boldify('Welcome!') + '\n\nThis is a cheap attempt to make an interesting personal page. \nType: "help" for a list of available commands.\n',
-                    name: 'personalpage',
-                    prompt: 'visitor@dariobanfi> ',
-                    onInit: function(term) {}
-                }).css({
-                    overflow: 'auto'
-                });
-
-                $(window).resize(function() {
-                    term.css('height', $(window).height() - 20);
-                    term.resize();
-                }).resize();
-            });
-
-            
-       
-    </script>
-  </head>
-<body>
-    <div id="shell"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Dario Banfi Personal Website">
+  <meta name="author" content="Dario Banfi">
+  <title>Dario Banfi</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+  <div id="particles-js">
+  <div class="main">
+    <div id="content">
+    <header>
+      <h1><span>Dario</span>Banfi</h1>
+      <ul class="links">
+        <li><a href="resume.pdf">Resume</a></li>
+        <li><a href="https://github.com/dariobanfi">GitHub</a></li>
+        <li><a href="mailto:dario.banfi9@gmail.com">Contact</a></li>
+      </ul>
+    </header>
+    <section id="about">
+      <p>
+      Hi! My name is Dario and I am a Software Developer! I'm <b id="myage"> </b> and I currently live in <a href="https://www.google.com/maps/place/Munich,+Germany/@48.1548256,11.4017529,11z/data=!3m1!4b1!4m2!3m1!1s0x479e75f9a38c5fd9:0x10cb84a7db1987d?hl=en">Munich</a>.
+      </p>
+      <p>
+      I love <b>Python</b> and <b>Java</b> and have a lot of experience on developing apps for <b>Android</b>.
+      Web Development and <b>JavaScript</b> are no strangers to me, including popular frameworks such as Angular.js, <b>Django</b> and Spring Framework. I also have a good knowledge of <b>SDN Networks</b> and love to manage linux servers.
+      </p>
+      <p>
+      In my free time, I like reading, playing guitar and cooking tasty Italian dishes. I love to surf and to travel around the world! Whenever I can, I work on my <b>open source</b> projects to improve my knowledge.
+      </p>
+    </section>
+    <footer>
+      <a href="mailto:dario.banfi9@gmail.com"><i class="fa fa-envelope-o"></i></a>
+      <a href="https://linkedin.com/in/dario-banfi-450b27116"><i class="fa fa-linkedin"></i></a>
+    </footer>
+  </div>
+  </div>
+  
+</div>
+  <script src="js/particles.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

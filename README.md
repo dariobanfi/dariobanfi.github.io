@@ -1,3 +1,3 @@
 # dariobanfi.github.io
 
-Simple terminal-style personal website.
+Simple personal website.
