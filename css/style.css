@@ -1,69 +1,83 @@
 html,body{
-  padding:0 0 0 0;
-  height:100%;
-}
-*{
+  padding: 0 0 0 0;
+  height: 100%;
   margin: 0;
 }
 
-#content{
+#content {
   font-family: 'Roboto', sans-serif;
-  color:#272727;
-  min-height: 100%;
-  height: auto !important;
-  height:100%;
-  margin: 0 auto -4em;
-  padding: 0 0 0 0;
+  color: #272727;
+  max-width: 670px;
+  margin: 0 auto;
+  padding: 0 20px 0 20px;
 }
 
-header{
-  padding-top:20px;
-  width:650px;
-  height:60px;
-  margin:0 auto 40px auto;
-  display:block;
+.main {
+    position: absolute;
+    top: 0;
+    width: 100%
 }
 
-header h1{
-  display:inline;
-  width:300px;
+header {
+  height: 60px;
+  margin: 20px 0 40px 0;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
 }
+
+header h1 {
+  flex-grow: 1;
+}
+
 header h1 span{
-  font-weight:300;
-}
-header ul{
-  float:right;
-  padding:10px 0 0 0;
+  font-weight: 300;
 }
 
-header li{
-  float:left;
+header li {
+  float: left;
   list-style-type: none;
-  margin-left:30px;
+  margin-left: 30px;
+  padding-top: 5px;
 }
-header li a{
+
+header li a {
   text-decoration: none;
   color:inherit;
 }
 
-#about{
-  font-weight:300;
-  width:670px;
-  margin:0 auto;
-  font-size:20px;
-  line-height:35px;
+section {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 35px;
 }
 
-#about a{
-  text-decoration: none;
+section a {
+  font-style: italic;
   color:inherit;
   font-weight:500;
 }
 
-#about p{
-  padding-right:0;
-  padding-left:10px;
+section p {
   margin-bottom:35px;
+}
+
+footer {
+  height: 40px;
+  font-size: 50px;
+  margin: 50px 0 0 0;
+  text-align: center;
+}
+
+footer a:visited, a {
+  color: inherit;
+}
+
+footer i {
+  margin-right: 30px;
 }
 
 #particles-js{
@@ -74,24 +88,4 @@ header li a{
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-}
-
-.main {
-    position: absolute;
-    top: 0%;
-    width: 100%
-}
-
-footer{
-  height:40px;
-  width:650px;
-  font-size:50px;
-  margin:50px auto 0 auto;
-  text-align:center;
-}
-footer a:visited,a{
-  color:inherit;
-}
-footer i{
-  margin-right:30px;
 }
