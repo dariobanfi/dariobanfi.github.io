@@ -112,13 +112,3 @@ particlesJS('particles-js',
 }
 
 );
-
-// Calculate my age
-var birthday = new Date();
-birthday.setUTCFullYear(1991);
-birthday.setUTCMonth(10);
-birthday.setUTCDate(09);
-var agediff = Date.now() - birthday.getTime();
-var agedate = new Date(agediff);
-var myage = Math.abs(agedate.getUTCFullYear() - 1970);
-document.getElementById('myage').innerHTML = myage;
