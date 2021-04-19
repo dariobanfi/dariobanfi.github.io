@@ -306,6 +306,7 @@ span.post-read-more a:hover {
 
 .mainheading h1.sitetitle {
     font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
 .mainheading h1.posttitle {
