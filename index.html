@@ -1,4 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-// TODO: Replace this text with an actual website before anyone notices.
-</html>
+---
+layout: default
+---
+<p class="intro">
+  Hi, I'm Dario. I build things with software. Here you can find my chain of thought. 100% human-generated content.
+</p>
+
+<ul class="posts">
+  {% for post in site.posts %}
+  <li>
+    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %Y' }}</time>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+  {% endfor %}
+</ul>

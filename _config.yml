@@ -1,0 +1,16 @@
+title: Dario Banfi
+description: My personal thoughts, 100% human-generated.
+url: https://dariobanfi.com
+
+# Pretty URLs: a post file named 2026-07-22-hello-world.html
+# is served at /posts/hello-world/  (no date, no .html)
+permalink: /posts/:title/
+
+# Keep the output lean.
+plugins: []
+
+# Don't copy these into the built site.
+exclude:
+  - README.md
+  - _template.html
+  - .zed
