@@ -1,0 +1,53 @@
+---
+layout: post
+title: "A new home for my agents"
+description: Upcycling old hardware to run 24/7 agents
+---
+<p>I'm a frugal person, and it's always difficult for me to throw away well working things, even if old and completely not needed anymore. This is why, over the course of years, I kept accumulating old laptops and tech.</p>
+<p>After checking in my "tech box", which now contains 4 laptops, and around a hundred USB-C cables, I decided I needed to do something. The timing was also perfect since I was losing access to my cloud resources and needed a persistent, always-running home server.</p>
+
+<p>My victim is this old <strong>Lenovo X201</strong> laptop. I originally bought it back when I was travelling regularly to Costa Rica, since the humidity was damaging my more expensive Macbook motherboard.</p>
+
+<figure>
+  <img src="/img/lenovox201.jpeg" alt="Lenovo ThinkPad X201 laptop">
+  <figcaption>The new home: a Lenovo ThinkPad X201.</figcaption>
+</figure>
+
+<p>It's a beauty that runs Arch Linux but hasn't been booted in the last 8 years. Initially I wanted to just run it as a <strong>headless home server</strong>:</p>
+
+<figure>
+  <img src="/img/lenovox201-teardown.jpg" alt="Lenovo ThinkPad X201 fully disassembled on a desk, with motherboard, keyboard, screen and other parts laid out">
+  <figcaption>Teardown in progress.</figcaption>
+</figure>
+
+<p>But then again I feel bad about throwing away the perfectly working LCD display, so I decided to create a beautiful, <strong>bamboo-wooden picture frame</strong> instead.</p>
+
+<p>Having access to a laser cutter, the <em>Epilog Mini</em>, I let Claude generate a beautiful SVG design and print it. Finding a thin, reasonably priced bamboo sheet of wood is actually more challenging but Ikea comes to the rescue.</p>
+
+<p>After a bit of tinkering I manage to fit all components in, and get this beautiful thing out:</p>
+
+<figure>
+  <img src="/img/lenovox201-frame.jpeg" alt="Lenovo X201 LCD screen mounted in a laser-cut bamboo wood picture frame, showing a small heart icon on a dark screen">
+  <figcaption>The finished bamboo-wood frame.</figcaption>
+</figure>
+
+<p>I then hanged it on the wall with a cable cover (for power and ethernet):</p>
+
+<figure>
+  <img src="/img/lenovox201-wall.jpg" alt="The framed X201 screen mounted on a wall, showing a family dashboard with weather and local events (personal calendar blurred)">
+  <figcaption>Mounted and running as a family dashboard.</figcaption>
+</figure>
+
+<p>On the software side, I went with a minimal Debian install. Funnily enough, the only way to turn it on is by sending a <strong>Wake-on-LAN</strong> magic packet, since while putting it back together I never found a good way to keep the power button working.</p>
+
+<p>Right now it's running:</p>
+
+<ul>
+  <li><strong>MiniDLNA</strong> media server, serving files to my smart TV and phones.</li>
+  <li>An agent that generates a daily dashboard with my events, the weather, and the kids' schedule, built with <strong>Claude Code</strong> and regenerated (UI included) every day to keep it fresh.</li>
+  <li>An <strong>eBay</strong> agent that manages the items I'm selling and watches for specific listings I'm looking for.</li>
+  <li>A <strong>Gemini Live API</strong> voice agent with face detection that greets you differently depending on who's looking at the camera. I keep having fun adding tool calls to it, it can now print things on my printer.</li>
+  <li>A couple of game servers, right now <em>Subnautica</em> multiplayer via Nitrox.</li>
+</ul>
+
+<p>Overall, a lot of fun. But I'm running a bit too much on this old, slow PC, temperatures average <strong>65°C</strong>, not helped by the poor ventilation. So I might be in the market for an upgrade soon, maybe with a GPU for local AI too!</p>
